@@ -1,3 +1,3 @@
-module package/parameterstore/parameterstore.go
+module package/parameterstore
 
 go 1.13
