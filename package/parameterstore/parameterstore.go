@@ -51,8 +51,8 @@ func (c *Client) GetParam(spec *ParemeterString) (string, error){
 		WithDecryption: &withDecryption,
 	})
 	if err != nil {
-		fmt.Println(err)
+		return ("", err)
 	}
 	value := *param.Parameter.Value
-	fmt.Println(value)
+	return value, err
 }
