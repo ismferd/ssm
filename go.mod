@@ -1,3 +1,3 @@
-module github.com/ismferd/ss/package/parameterstore
+module github.com/ismferd/ssm/package/parameterstore
 
 go 1.13
