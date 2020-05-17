@@ -1,3 +1,3 @@
-module github.com/ismferd/ssm/
+module github.com/ismferd/ssm
 
 go 1.13
