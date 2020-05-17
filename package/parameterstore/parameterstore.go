@@ -7,7 +7,6 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/ssm"
 	"github.com/aws/aws-sdk-go/service/ssm/ssmiface"
-	"fmt"
 )
 
 // New creates an AWS Session Manager Client
@@ -51,7 +50,7 @@ func (c *Client) GetParam(spec *ParemeterString) (string, error){
 		WithDecryption: &withDecryption,
 	})
 	if err != nil {
-		return ("", err)
+		return "", err
 	}
 	value := *param.Parameter.Value
 	return value, err
