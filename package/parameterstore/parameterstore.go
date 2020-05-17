@@ -43,7 +43,7 @@ func (c *Client) newSession(config *AWSConfig) *session.Session {
 }
 
 // GetParam lalala
-func (c *Client) GetParam(spec *ParemeterString) {
+func (c *Client) GetParam(spec *ParemeterString) (string, error){
 	//keyname := "/first/try"
 	withDecryption := false
 	param, err := c.api.GetParameter(&ssm.GetParameterInput{
