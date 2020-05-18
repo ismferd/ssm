@@ -6,21 +6,20 @@ import (
 )
 
 // AWSConfig store configuration used to initialize
-// secrets manager client.
+// AWS SSM client.
 type AWSConfig struct {
 	Region string
 }
 
-// Client represents an AWS Secrets Manager client
-//
+// Client represents an AWS SSM client
 // maps to ProviderServices
 type Client struct {
 	config *AWSConfig
 	api    ssmiface.SSMAPI
 }
 
-// SecretString is a concret representation
-// of an AWS Secrets Manager Secret String
+// ParameterString is a concret representation
+// of an AWS SSM Parameter Store String in plain text
 type ParemeterString struct {
 	Name string
 }

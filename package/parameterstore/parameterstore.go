@@ -20,7 +20,7 @@ func New(config *AWSConfig) *Client {
 	return c
 }
 
-// ParameterStore returns a representation of the Secrets Manager API
+// ParameterStore returns a representation of the SSM API
 func (c *Client) ParameterStore() ssmiface.SSMAPI {
 	return c.api
 }
@@ -41,9 +41,8 @@ func (c *Client) newSession(config *AWSConfig) *session.Session {
 	return session.Must(session.NewSessionWithOptions(opts))
 }
 
-// GetParam lalala
+// GetParam return the param of PS
 func (c *Client) GetParam(spec *ParemeterString) (string, error){
-	//keyname := "/first/try"
 	withDecryption := false
 	param, err := c.api.GetParameter(&ssm.GetParameterInput{
 		Name:           &spec.Name,
